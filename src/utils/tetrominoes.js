@@ -31,5 +31,13 @@ export const TETROMINOES = {
       ["O", "O"]
     ],
     color: "223, 217, 36"
+  },
+  S: {
+    shape: [
+      [0, "S", "S"],
+      ["S", "S", 0],
+      [0, 0, 0]
+    ],
+    color: "48, 211, 56"
   }
 };
