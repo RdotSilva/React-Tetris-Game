@@ -8,5 +8,13 @@ export const TETROMINOES = {
       [0, "I", 0, 0]
     ],
     color: "80, 227, 230"
+  },
+  J: {
+    shape: [
+      [0, "J", 0],
+      [0, "J", 0],
+      ["J", "J", 0]
+    ],
+    color: "36, 95, 223"
   }
 };
