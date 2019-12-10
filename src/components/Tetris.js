@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { createStage } from "../utils/gameHelpers";
+
 import Stage from "./Stage";
 import Display from "./Display";
 import StartButton from "./StartButton";
@@ -18,8 +20,9 @@ const Tetris = () => {
   const [stage, setStage] = useStage(player);
 
   console.log("Re-Render");
+
   return (
-    <StyledTetrisWrapper>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
