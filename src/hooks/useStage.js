@@ -11,6 +11,18 @@ export const useStage = (player, resetPlayer) => {
         row.map(cell => (cell[1] === "clear" ? [0, "clear"] : cell))
       );
 
+      // Draw tetromino
+      player.tetromino.forEach((row, y) => {
+        row.forEach((value, x) => {
+          if (value !== 0) {
+            newStage[y + player.pos.y][x + player.pos.x] = [
+              value,
+              `${player.collided ? "merged" : "clear"}`
+            ];
+          }
+        });
+      });
+
       return newStage;
     };
 
