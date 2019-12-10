@@ -21,6 +21,10 @@ const Tetris = () => {
 
   console.log("Re-Render");
 
+  const drop = () => {
+    updatePlayerPos({ x: 0, y: 1, collided: false });
+  };
+
   const dropPlayer = () => {
     drop();
   };
