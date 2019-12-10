@@ -21,6 +21,10 @@ const Tetris = () => {
 
   console.log("Re-Render");
 
+  const movePlayer = dir => {
+    updatePlayerPos({ x: dir, y: 0 });
+  };
+
   const startGame = () => {
     // Reset all
     setStage(createStage());
