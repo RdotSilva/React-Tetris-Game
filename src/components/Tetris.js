@@ -21,6 +21,12 @@ const Tetris = () => {
 
   console.log("Re-Render");
 
+  const startGame = () => {
+    // Reset all
+    setStage(createStage());
+    resetPlayer();
+  };
+
   const drop = () => {
     updatePlayerPos({ x: 0, y: 1, collided: false });
   };
@@ -55,7 +61,7 @@ const Tetris = () => {
               <Display text="Level" />
             </div>
           )}
-          <StartButton />
+          <StartButton onClick={startGame} />
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
