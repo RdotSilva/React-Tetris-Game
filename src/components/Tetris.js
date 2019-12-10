@@ -21,6 +21,10 @@ const Tetris = () => {
 
   console.log("Re-Render");
 
+  const dropPlayer = () => {
+    drop();
+  };
+
   const move = ({ keyCode }) => {
     if (!gameOver) {
       if (keyCode === 37) {
