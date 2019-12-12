@@ -21,6 +21,14 @@ export const usePlayer = () => {
     return rotatedTetromino.reverse();
   };
 
+  const playerRotate = (stage, dir) => {
+    const clonedPlayer = JSON.parse(JSON.stringify(player));
+
+    clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
+
+    setPlayer(clonedPlayer);
+  };
+
   const updatePlayerPos = ({ x, y, collided }) => {
     setPlayer(prev => ({
       ...prev,
