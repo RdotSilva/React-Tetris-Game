@@ -11,6 +11,16 @@ export const usePlayer = () => {
     collided: false
   });
 
+  const rotate = (tetromino, dir) => {
+    // Transpose rows to columns
+    const rotatedTetromino = tetromino.map((_, index) =>
+      tetromino.map(col => col[index])
+    );
+    // Reverse each row to get rotated tetromino
+    if (dir > 0) return rotatedTetromino.map(row => row.reverse());
+    return rotatedTetromino.reverse();
+  };
+
   const updatePlayerPos = ({ x, y, collided }) => {
     setPlayer(prev => ({
       ...prev,
