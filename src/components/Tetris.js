@@ -11,6 +11,7 @@ import { StyledTetris } from "./styles/StyledTetris";
 
 import { usePlayer } from "./../hooks/usePlayer";
 import { useStage } from "./../hooks/useStage";
+import { useInterval } from "./../hooks/useInterval";
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -64,6 +65,10 @@ const Tetris = () => {
       }
     }
   };
+
+  useInterval(() => {
+    drop();
+  }, dropTime);
 
   return (
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
