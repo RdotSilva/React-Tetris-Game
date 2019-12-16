@@ -61,6 +61,16 @@ const Tetris = () => {
     }
   };
 
+  const instantDrop = () => {
+    let rowsUntilCollision = 0;
+    while (!checkCollision(player, stage, { x: 0, y: rowsUntilCollision })) {
+      rowsUntilCollision += 1;
+    }
+
+    console.log("POT" + pot);
+    updatePlayerPos({ x: 0, y: rowsUntilCollision - 1, collided: true });
+  };
+
   const keyUp = ({ keyCode }) => {
     if (!gameOver) {
       if (keyCode === 40) {
