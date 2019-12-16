@@ -18,6 +18,7 @@ import { useGameStatus } from "./../hooks/useGameStatus";
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -118,10 +119,11 @@ const Tetris = () => {
           ) : (
             <div>
               <Display text={`Score: ${score}`} />
+              <Display text={`High Score: ${highScore}`} />
               <Display text={`Rows: ${rows}`} />
               <Display text={`Level: ${level}`} />
               <Instructions
-                text={"Press the arrow keys to move. Press the D key to drop."}
+                text={"Press the arrow keys to move Press the D key to drop"}
               ></Instructions>
             </div>
           )}
