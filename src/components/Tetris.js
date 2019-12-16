@@ -66,8 +66,6 @@ const Tetris = () => {
     while (!checkCollision(player, stage, { x: 0, y: rowsUntilCollision })) {
       rowsUntilCollision += 1;
     }
-
-    console.log("POT" + pot);
     updatePlayerPos({ x: 0, y: rowsUntilCollision - 1, collided: true });
   };
 
@@ -94,6 +92,8 @@ const Tetris = () => {
         dropPlayer();
       } else if (keyCode === 38) {
         playerRotate(stage, 1);
+      } else if (keyCode === 68) {
+        instantDrop();
       }
     }
   };
