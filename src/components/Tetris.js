@@ -5,6 +5,7 @@ import { createStage, checkCollision } from "../utils/gameHelpers";
 import Stage from "./Stage";
 import Display from "./Display";
 import StartButton from "./StartButton";
+import Instructions from "./Instructions";
 
 import { StyledTetrisWrapper } from "./styles/StyledTetris";
 import { StyledTetris } from "./styles/StyledTetris";
@@ -119,6 +120,9 @@ const Tetris = () => {
               <Display text={`Score: ${score}`} />
               <Display text={`Rows: ${rows}`} />
               <Display text={`Level: ${level}`} />
+              <Instructions
+                text={"Press the arrow keys to move. Press the D key to drop."}
+              ></Instructions>
             </div>
           )}
           <StartButton callback={startGame} />
