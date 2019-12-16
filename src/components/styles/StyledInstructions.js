@@ -8,6 +8,7 @@ export const StyledInstructions = styled.div`
   padding: 20px;
   border: 4px solid #333;
   min-height: 30px;
+  line-height: 25px;
   width: 330px;
   border-radius: 20px;
   color: #999;
