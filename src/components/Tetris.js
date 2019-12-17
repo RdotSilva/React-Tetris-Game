@@ -20,6 +20,7 @@ const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [gamePaused, setGamePaused] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
   const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
