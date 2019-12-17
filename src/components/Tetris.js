@@ -5,6 +5,7 @@ import { createStage, checkCollision } from "../utils/gameHelpers";
 import Stage from "./Stage";
 import Display from "./Display";
 import StartButton from "./StartButton";
+import PauseButton from "./PauseButton";
 import Instructions from "./Instructions";
 
 import { StyledTetrisWrapper } from "./styles/StyledTetris";
@@ -109,8 +110,6 @@ const Tetris = () => {
         playerRotate(stage, 1);
       } else if (keyCode === 68) {
         instantDrop();
-      } else if (keyCode === 81) {
-        pauseGame();
       }
     }
   };
@@ -143,6 +142,11 @@ const Tetris = () => {
             </div>
           )}
           <StartButton callback={startGame} />
+          <PauseButton
+            callback={pauseGame}
+            gamePaused={gamePaused}
+            text={gamePaused ? "Unpause Game" : "Pause Game"}
+          />
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
