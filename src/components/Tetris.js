@@ -144,7 +144,7 @@ const Tetris = () => {
             <div>
               <Display text={`Score: ${score}`} />
               <Display text={`High Score: ${highScore}`} />
-              <Display text={`Rows: ${rows}`} />
+              <Display text={`Lines: ${rows}`} />
               <Display text={`Level: ${level}`} />
               <Instructions
                 text={"Press the arrow keys to move Press the D key to drop"}
@@ -152,11 +152,13 @@ const Tetris = () => {
             </div>
           )}
           <StartButton callback={startGame} />
-          <PauseButton
-            callback={pauseGame}
-            gamePaused={gamePaused}
-            text={gamePaused ? "Unpause Game" : "Pause Game"}
-          />
+          {gameOver ? null : (
+            <PauseButton
+              callback={pauseGame}
+              gamePaused={gamePaused}
+              text={gamePaused ? "Unpause Game" : "Pause Game"}
+            />
+          )}
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
