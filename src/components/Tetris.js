@@ -114,6 +114,12 @@ const Tetris = () => {
     }
   };
 
+  const disableKeyboard = e => {
+    if (!gameOver) {
+      e.preventDefault();
+    }
+  };
+
   useInterval(() => {
     drop();
   }, dropTime);
@@ -122,7 +128,9 @@ const Tetris = () => {
     <StyledTetrisWrapper
       role="button"
       tabIndex="0"
-      onKeyDown={e => move(e)}
+      onKeyDown={e => {
+        gamePaused ? disableKeyboard(e) : move(e);
+      }}
       onKeyUp={keyUp}
     >
       <StyledTetris>
