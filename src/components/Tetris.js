@@ -37,6 +37,7 @@ const Tetris = () => {
 
   const startGame = () => {
     setStage(createStage());
+    setGameStarted(true);
     setDropTime(1000);
     resetPlayer();
     setGameOver(false);
@@ -57,6 +58,7 @@ const Tetris = () => {
     } else {
       if (player.pos.y < 1) {
         console.log("GAME OVER!!!");
+        setGameStarted(false);
         setGameOver(true);
         if (score > highScore) {
           localStorage.setItem("highScore", score);
@@ -153,7 +155,7 @@ const Tetris = () => {
             </div>
           )}
           <StartButton callback={startGame} />
-          {gameOver ? null : (
+          {!gameStarted ? null : (
             <PauseButton
               callback={pauseGame}
               gamePaused={gamePaused}
