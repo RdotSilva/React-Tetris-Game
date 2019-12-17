@@ -109,6 +109,8 @@ const Tetris = () => {
         playerRotate(stage, 1);
       } else if (keyCode === 68) {
         instantDrop();
+      } else if (keyCode === 81) {
+        pauseGame();
       }
     }
   };
