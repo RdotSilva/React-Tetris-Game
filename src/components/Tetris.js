@@ -68,11 +68,13 @@ const Tetris = () => {
   };
 
   const instantDrop = () => {
-    let rowsUntilCollision = 0;
-    while (!checkCollision(player, stage, { x: 0, y: rowsUntilCollision })) {
-      rowsUntilCollision += 1;
+    if (!gamePaused) {
+      let rowsUntilCollision = 0;
+      while (!checkCollision(player, stage, { x: 0, y: rowsUntilCollision })) {
+        rowsUntilCollision += 1;
+      }
+      updatePlayerPos({ x: 0, y: rowsUntilCollision - 1, collided: true });
     }
-    updatePlayerPos({ x: 0, y: rowsUntilCollision - 1, collided: true });
   };
 
   const keyUp = ({ keyCode }) => {
