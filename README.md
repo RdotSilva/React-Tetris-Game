@@ -2,6 +2,30 @@
 
 Classic Tetris built with React hooks.
 
+Calculates score based on level and number of lines cleared. Displays user score, level, and current high score.
+
+High score is stored using Web Storage API (localStorage)
+
+# Game Rules
+
+Clear as many lines as possible to score points before your tetrominoes build up and hit top of the game screen.
+
+The more lines you clear at once the more points you score!
+
+# Controls
+
+&#8592; Move Left
+
+&#8594; Move Right
+
+&#8595; Move Down
+
+&#8593; Rotate Tetromino
+
+<kbd>D</kbd> Drop Instantly
+
+Click the Pause button to Pause/Unpause gameplay.
+
 ## Installation
 
 1. Install dependencies in main project folder.
@@ -18,12 +42,15 @@ npm start
 
 ## Screenshots
 
-![Coming Soon](https://upload.wikimedia.org/wikipedia/commons/8/80/Comingsoon.png "Coming Soon")
+![Gameplay](https://i.imgur.com/Z1Vtaid.jpg "Gameplay")
+![Pause Game](https://i.imgur.com/wDH3RMa.jpg "Pause Game")
+![Game Over](https://i.imgur.com/s5HFk5F.jpg "Game Over")
 
 ## Built With
 
 - JavaScript
 - React (React hooks)
+- VSCode
 
 ## License
 
