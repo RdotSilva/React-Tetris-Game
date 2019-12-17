@@ -87,6 +87,16 @@ const Tetris = () => {
     drop();
   };
 
+  const pauseGame = () => {
+    if (!gamePaused) {
+      setGamePaused(true);
+      setDropTime(null);
+    } else {
+      setGamePaused(!gamePaused);
+      setDropTime(1000 / (level + 1) + 200);
+    }
+  };
+
   const move = ({ keyCode }) => {
     if (!gameOver) {
       if (keyCode === 37) {
