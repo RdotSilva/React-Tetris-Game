@@ -6,6 +6,8 @@ Calculates score based on level and number of lines cleared. Displays user score
 
 High score is stored using Web Storage API (localStorage)
 
+Live Demo: [Heroku Demo](https://tetris-time-react.herokuapp.com/ "Heroku Demo")
+
 # Game Rules
 
 Clear as many lines as possible to score points before your tetrominoes build up and hit top of the game screen.
@@ -40,17 +42,17 @@ Run the client
 npm start
 ```
 
-## Screenshots
-
-![Gameplay](https://i.imgur.com/Z1Vtaid.jpg "Gameplay")
-![Pause Game](https://i.imgur.com/wDH3RMa.jpg "Pause Game")
-![Game Over](https://i.imgur.com/s5HFk5F.jpg "Game Over")
-
 ## Built With
 
 - JavaScript
 - React (React hooks)
 - VSCode
+
+## Screenshots
+
+![Gameplay](https://i.imgur.com/Z1Vtaid.jpg "Gameplay")
+![Pause Game](https://i.imgur.com/wDH3RMa.jpg "Pause Game")
+![Game Over](https://i.imgur.com/s5HFk5F.jpg "Game Over")
 
 ## License
 
